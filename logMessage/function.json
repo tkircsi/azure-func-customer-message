@@ -1,0 +1,16 @@
+{
+  "bindings": [
+    {
+      "name": "payload",
+      "type": "activityTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "filestore",
+      "type": "blob",
+      "path": "{messagetype}/{filename}",
+      "direction": "out",
+      "connection": "AzureWebJobsStorage"
+    }
+  ]
+}
