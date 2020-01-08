@@ -1,0 +1,15 @@
+{
+  "bindings": [
+    {
+      "name": "payload",
+      "type": "activityTrigger",
+      "direction": "in"
+    },
+    {
+      "type": "twilioSms",
+      "name": "smsmessage",
+      "from": "+15082583823",
+      "direction": "out"
+    }
+  ]
+}
