@@ -12,13 +12,13 @@
 const df = require("durable-functions");
 
 module.exports = df.orchestrator(function* (context) {
-    const outputs = [];
-    const input = context.df.getInput();
-    input['filename'] = `file_${input['name']}.txt`;
+  const outputs = [];
+  const input = context.df.getInput();
+  input['filename'] = `file_${input['name']}.txt`;
 
-    outputs.push(yield context.df.callActivity("logMessage", input));
-    outputs.push(yield context.df.callActivity("sendEmail", input.email));
+  outputs.push(yield context.df.callActivity("logMessage", input));
+  outputs.push(yield context.df.callActivity("sendEmail", input.email));
+  outputs.push(yield context.df.callActivity("sendSMS", input));
 
-
-    return outputs;
+  return outputs;
 });
